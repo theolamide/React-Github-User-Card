@@ -5,7 +5,7 @@ import axios from 'axios';
 class FollowerCard extends React.Component{
 
     state = {
-    user: [] 
+    user: []   
     };
 
       
@@ -14,7 +14,7 @@ class FollowerCard extends React.Component{
     .then(res =>{
         console.log(res.data);
         this.setState({
-        user: [res.data]       
+        user: res.data    
         });      
     })
     .catch(err => console.log(err));
@@ -23,12 +23,12 @@ class FollowerCard extends React.Component{
 
     
     render (){
-        
+        // this.state.user.map( currentUser => console.log(currentUser))
+        // console.log(this.state.user[0])
         return(
             <div className = "outsideLoopFollowerCard">
-                {/* {this.state.user.map(followerUser => (
-                    <div key={followerUser.id} className = "followerCard">
-                        <>            
+                {this.state.user.map(followerUser => (
+                    <div key={followerUser.id} className = "followerCard">     
                             <img className = "avatar" src = {`${followerUser.avatar_url}`} alt="avatar"/>            
                             <div key = {followerUser.id}>
                                 <h1>{followerUser.name} </h1>
@@ -37,9 +37,8 @@ class FollowerCard extends React.Component{
                                 <h3>github profile: {followerUser.html_url} </h3>
                                 <h3>repositories: {followerUser.public_repos} </h3>
                             </div>
-                        </>
                     </div> 
-                ))} */}
+                ))}
             </div>
         )
 

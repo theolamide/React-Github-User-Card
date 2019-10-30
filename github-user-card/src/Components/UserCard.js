@@ -14,7 +14,7 @@ class UserCard extends React.Component{
     .then(res =>{
         console.log(res);
         this.setState({
-        user: [res.data]        
+        user: [res.data]       
         });      
     })
     .catch(err => console.log(err));
@@ -23,22 +23,21 @@ class UserCard extends React.Component{
 
 
     render (){
+        console.log(this.state.user)
         return(
             <div className = "outsideLoopUserCard">
                 {this.state.user.map(singleUser => (
                     <div key = {singleUser.id} className = "userCard">
-                    <>  
-                                     
-                        <img className = "avatar" src = {`${singleUser.avatar_url}`} alt="avatar"/>            
-                        <div>
-                            <h1>{singleUser.name} </h1>
-                            <h3>login: {singleUser.login} </h3>
-                            <h3>location: {singleUser.location} </h3>
-                            <h3>github profile: {singleUser.html_url} </h3>
-                            <h3>repositories: {singleUser.public_repos} </h3>
-                        </div>
-                    
-                    </>
+                        <>          
+                            <img className = "avatar" src = {`${singleUser.avatar_url}`} alt="avatar"/>            
+                            <div>
+                                <h1>{singleUser.name} </h1>
+                                <h3>login: {singleUser.login} </h3>
+                                <h3>location: {singleUser.location} </h3>
+                                <h3>github profile: {singleUser.html_url} </h3>
+                                <h3>repositories: {singleUser.public_repos} </h3>
+                            </div>
+                        </>
                     </div> 
                 ))}
             </div>
