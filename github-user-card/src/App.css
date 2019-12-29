@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+  background: linear-gradient(141deg, #e8b7e8 0%, #e2d87f 51%, #c1efb3 75%);
+  height: 100vh;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.outsideLoopUserCard{
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.userCard{
+  border: 3px solid white;
+  width: 100%;
+  border-radius: 2rem;
+
+}
+
+.avatar{
+  width: 80%;
+  border-radius: 7rem;
+  padding-top: 1rem
+  ;
+}
